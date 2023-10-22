@@ -32,8 +32,8 @@ for index, row in last_matches.iterrows():
     with col1:
         st.write(str(row['Datum_meča']))
     with col2:
-        st.markdown('<h5>'+str(row['Protivnik_1'])+'</h5>', unsafe_allow_html=True)
+        st.markdown('<h5 style="font-color: '+str(row['Protivnik_1_boja'])+'">'+str(row['Protivnik_1'])+'</h5>', unsafe_allow_html=True)
     with col3:
         st.markdown('<h5>'+str(row['Rezultat_1'])+' : '+str(row['Rezultat_2'])+'</h5>', unsafe_allow_html=True)
     with col4:
-        st.markdown('<h5>'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
+        st.markdown('<h5 style="font-color: '+str(row['Protivnik_1_boja'])+'">'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
