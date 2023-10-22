@@ -27,6 +27,17 @@ st.write(last_matches)
 
 #def rezultat_matcha(id):
 
+for index, row in last_matches.iterrows():
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.write(str(row['Datum_meča']))
+    with col2:
+        st.markdown('<h5>'+str(row['Protivnik_1'])+'</h5>', unsafe_allow_html=True)
+    with col3:
+        st.markdown('<h4>'+str(row['Rezultat_1'])+' : '+str(row['Rezultat_2'])+'</h4>', unsafe_allow_html=True)
+    with col4:
+        st.markdown('<h5>'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
+
 for index,row in last_matches.iterrows():
     html = '''<div class="utakmica"><div class="datum">
     <h5>'''+str(row['Datum_meča'])+'''</h5></div>
