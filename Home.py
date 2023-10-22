@@ -63,7 +63,7 @@ with col7:
     st.write('SD')
 
 for index, row in igraci.iterrows():
-    col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
     with col1:
         st.write(row['Rang'])
     with col2:
@@ -78,6 +78,11 @@ for index, row in igraci.iterrows():
         st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj Izgubljenih setova']))
     with col7:
         st.write(str(row['Razlika']))
+    with col8:
+        rezz = matches.query('Protivnik_1 == "'+str(row['Ime'])+'" | Protivnik_2 == "'+str(row['Ime'])+'"')
+        st.write(rezz)
+
+
 st.divider()
 
 st.header('Statistike igrača')
