@@ -22,8 +22,7 @@ matches['Datum_meča'] = matches['Datum_meča'].dt.date
 matches = matches.sort_values(by=['Datum_meča','ID'], ascending=False)
 last_matches = matches[0:10]
 
-st.write('Posljednji rezultati')
-st.write(last_matches)
+st.header('Posljednji rezultati')
 
 #def rezultat_matcha(id):
 
@@ -37,3 +36,22 @@ for index, row in last_matches.iterrows():
         st.markdown('<h5>'+str(row['Rezultat_1'])+' : '+str(row['Rezultat_2'])+'</h5>', unsafe_allow_html=True)
     with col4:
         st.markdown('<h5 style="color: '+str(row['Protivnik_2_boja'])+'">'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
+
+st.header('Statistike igrača')
+
+igraci = []
+for index, row in matches.iterrows()
+    igraci.append(row['Protivnik_1'])
+    igraci.append(row['Protivnik_2'])
+
+igraci = list(dict.fromkeys(igraci))
+tipovi_matcheva = matches['Tip_meča'].unique()
+
+col1, col2 = st.columns(2)
+with col1:
+    st.write('Izaberi igrača:')
+    igrac = st.selectbox(igraci)
+
+with col2:
+    st.write('Izaberi tip meča:')
+    tipovi = st.selectbox(tipovi_matcheva)
