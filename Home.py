@@ -61,6 +61,8 @@ with col6:
     st.write('S')
 with col7:
     st.write('SD')
+with col8:
+    st.write('FORM')
 
 for index, row in igraci.iterrows():
     col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
@@ -80,6 +82,7 @@ for index, row in igraci.iterrows():
         st.write(str(row['Razlika']))
     with col8:
         rezz = matches.query('Protivnik_1 == "'+str(row['Ime'])+'" | Protivnik_2 == "'+str(row['Ime'])+'"')
+        rezz = rezz[0:5]
         imee = str(row['Ime'])
         if len(rezz) == 0:
             pass
