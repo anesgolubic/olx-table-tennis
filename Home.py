@@ -18,7 +18,7 @@ with open('style.css')as f:
 matches = pd.read_excel('table_tennis.xlsx', sheet_name='Matchevi')
 matches['Datum_meča'] = matches['Datum_meča'].dt.date
 matches = matches.sort_values('Datum_meča', inplace=True)
-last_matches = matches[0:10]
+#last_matches = matches[0:10]
 
 st.write('Posljednji rezultati')
-st.write(last_matches)
+st.write(matches)
