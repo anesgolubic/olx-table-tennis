@@ -28,7 +28,7 @@ st.write(last_matches)
 #def rezultat_matcha(id):
 
 for index, row in last_matches.iterrows():
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns([1,1,1,1,3])
     with col1:
         st.write(str(row['Datum_meča']))
     with col2:
