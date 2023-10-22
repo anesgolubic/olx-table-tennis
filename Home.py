@@ -90,9 +90,9 @@ for index, row in igraci.iterrows():
             lista = ""
             for index, row in rezz.iterrows():
                 if str(row['Pobjednik']) == imee:
-                    lista += '<span style="background-color:#00a83f; color=white">W</span>'
+                    lista += '<span style="background-color:#00a83f;padding:5px;color:white">W</span>'
                 else:
-                    lista += '<span style="background-color:#dc0000; color=white">L</span>'
+                    lista += '<span style="background-color:#dc0000;padding:5px;color:white">L</span>'
         st.markdown(lista, unsafe_allow_html=True)
 
 #st.header('Statistike igrača')
