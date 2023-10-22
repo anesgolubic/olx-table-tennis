@@ -37,35 +37,16 @@ for index, row in last_matches.iterrows():
     with col4:
         st.markdown('<h5 style="color: '+str(row['Protivnik_2_boja'])+'">'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
 
+
+
+igraci = pd.read_excel('table_tennis.xlsx', sheet_name='Osobe')
+igraci = igraci.sort_values(by=['Rang'], ascending=True)
+
+
+st.header('Tabela igrača')
+st.write(igraci)
+
+
+
 st.header('Statistike igrača')
-
-igraci = []
-for index, row in matches.iterrows():
-    igraci.append(row['Protivnik_1'])
-    igraci.append(row['Protivnik_2'])
-
-igraci = list(dict.fromkeys(igraci))
-tipovi_matcheva = matches['Tip_meča'].unique()
-
-col1, col2 = st.columns(2)
-with col1:
-    igrac = st.selectbox(label='Igrač', options=igraci)
-
-with col2:
-    tipovi = st.selectbox(label='Tip meča', options=tipovi_matcheva)
-
-matches2 = matches.query('Protivnik_1 == "'+str(igrac)+'" | Protivnik_2 == "'+str(igrac)+'"')
-matches2 = matches2.query('Tip_meča == "'+str(tipovi)+'"')
-pobjede = len(matches2.query('Pobjednik == "'+str(igrac)+'"'))
-porazi = len(matches2.query('Gubitnik == "'+str(igrac)+'"'))
-
-
-broj_utakmica = len(matches2)
-st.header('Igrač: '+str(igrac))
-col1, col2, col3, col4, col5 = st.columns(5)
-with col1:
-    st.metric(label="Broj utakmica", value=str(broj_utakmica))
-with col2:
-    st.metric(label="Broj pobjeda", value=str(pobjede))
-with col3:
-    st.metric(label="Broj poraza", value=str(porazi))
+igrac = st.selectbox(label='Igrač', options=igraci)
