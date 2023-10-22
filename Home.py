@@ -80,11 +80,14 @@ for index, row in igraci.iterrows():
         st.write(str(row['Razlika']))
     with col8:
         rezz = matches.query('Protivnik_1 == "'+str(row['Ime'])+'" | Protivnik_2 == "'+str(row['Ime'])+'"')
-        for index, row in rezz.iterrows:
-            if rezz['Pobjednik'] == row['Ime']:
-                st.write('W')
-            else:
-                st.write('L')
+        if len(rezz) == 0:
+            pass
+        else:
+            for index, row in rezz.iterrows:
+                if rezz['Pobjednik'] == row['Ime']:
+                    st.write('W')
+                else:
+                    st.write('L')
 
 st.header('Statistike igrača')
 igrac = st.selectbox(label='Igrač', options=igraci)
