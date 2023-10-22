@@ -50,8 +50,8 @@ tipovi_matcheva = matches['Tip_meča'].unique()
 col1, col2 = st.columns(2)
 with col1:
     st.write('Izaberi igrača:')
-    igrac = st.selectbox(options=igraci)
+    igrac = st.selectbox(label='Igrač', options=igraci)
 
 with col2:
     st.write('Izaberi tip meča:')
-    tipovi = st.selectbox(options=tipovi_matcheva)
+    tipovi = st.selectbox(label='Tip meča', options=tipovi_matcheva)
