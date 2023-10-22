@@ -73,7 +73,7 @@ for index, row in igraci.iterrows():
     with col5:
         st.write(str(row['Broj poraza']))
     with col5:
-        st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj izgubljenih setova']))
+        st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj Izgubljenih setova']))
 
 
 st.header('Statistike igrača')
