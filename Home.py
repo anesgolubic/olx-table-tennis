@@ -87,7 +87,7 @@ for index, row in igraci.iterrows():
             pass
         else:
             for index, row in rezz.iterrows():
-                if str(rezz['Pobjednik']) == imee:
+                if str(row['Pobjednik']) == imee:
                     st.write('W')
                 else:
                     st.write('L')
