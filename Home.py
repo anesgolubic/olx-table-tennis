@@ -37,11 +37,3 @@ for index, row in last_matches.iterrows():
         st.markdown('<h5>'+str(row['Rezultat_1'])+' : '+str(row['Rezultat_2'])+'</h5>', unsafe_allow_html=True)
     with col4:
         st.markdown('<h5>'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
-    st.divider()
-
-
-st.write('Drugi pokusaj')
-
-for index, row in last_matches.iterrows():
-    st.markdown('<h5 style="display: inline">'+str(row['Protivnik_1'])+'</h5><h4 style="display: inline">'+str(row['Rezultat_1'])+' : '+str(row['Rezultat_2'])+'</h4><h5 style="display: inline">'+str(row['Protivnik_2'])+'</h5>', unsafe_allow_html=True)
-    st.divider()
