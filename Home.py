@@ -78,6 +78,7 @@ for index, row in igraci.iterrows():
         st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj Izgubljenih setova']))
     with col7:
         st.write(str(row['Razlika']))
+st.divider()
 
 st.header('Statistike igrača')
 igrac = st.selectbox(label='Igrač', options=igraci)
