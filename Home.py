@@ -32,7 +32,7 @@ st.write(last_matches)
 for index,row in last_matches.iterrows():
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.write(row['Datum_meča'])
+        st.markdown('<h3>'+str(row['Datum_meča'])+'</h3>', unsafe_allow_html=True)
     with col2:
         st.write(row['Protivnik_1'])
         st.write(row['Protivnik_2'])
