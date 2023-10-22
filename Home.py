@@ -40,7 +40,7 @@ for index, row in last_matches.iterrows():
 st.header('Statistike igrača')
 
 igraci = []
-for index, row in matches.iterrows()
+for index, row in matches.iterrows():
     igraci.append(row['Protivnik_1'])
     igraci.append(row['Protivnik_2'])
 
