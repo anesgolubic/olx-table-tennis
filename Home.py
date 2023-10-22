@@ -81,8 +81,6 @@ for index, row in igraci.iterrows():
     with col8:
         rezz = matches.query('Protivnik_1 == "'+str(row['Ime'])+'" | Protivnik_2 == "'+str(row['Ime'])+'"')
         imee = str(row['Ime'])
-        st.write(rezz)
-        st.write(imee)
         if len(rezz) == 0:
             pass
         else:
