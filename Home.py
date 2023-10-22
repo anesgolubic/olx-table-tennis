@@ -84,11 +84,13 @@ for index, row in igraci.iterrows():
         if len(rezz) == 0:
             pass
         else:
+            lista = ""
             for index, row in rezz.iterrows():
                 if str(row['Pobjednik']) == imee:
-                    st.markdown('<span style="color: #00a83f">W</span>', unsafe_allow_html=True)
+                    lista += '<span style="color: #00a83f">W</span>'
                 else:
-                    st.write('<span style="color: ##dc0000">L</span>', unsafe_allow_html=True)
+                    lista += '<span style="color: #dc0000">L</span>'
+        st.markdown(lista, unsafe_allow_html=True)
 
 st.header('Statistike igrača')
 igrac = st.selectbox(label='Igrač', options=igraci)
