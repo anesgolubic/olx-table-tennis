@@ -46,7 +46,7 @@ igraci = igraci.sort_values(by=['Rang'], ascending=True)
 st.header('Tabela igrača')
 #st.write(igraci)
 
-col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
+col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1,2,1,1,1,1,1,2])
 with col1:
     st.write('#')
 with col2:
@@ -65,9 +65,9 @@ with col8:
     st.write('FORM')
 
 for index, row in igraci.iterrows():
-    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
+    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns([1,2,1,1,1,1,1,2])
     with col1:
-        st.write(row['Rang'])
+        st.write(str(row['Rang']))
     with col2:
         st.write(str(row['Ime'])+' '+str(row['Prezime'] ))
     with col3:
