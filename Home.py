@@ -59,6 +59,7 @@ matches2 = matches2.query('Tip_meča == "'+str(tipovi)+'"')
 pobjede = len(matches2.query('Pobjednik == "'+str(igrac)+'"'))
 porazi = len(matches2.query('Gubitnik == "'+str(igrac)+'"'))
 
+
 broj_utakmica = len(matches2)
 st.header('Igrač: '+str(igrac))
 col1, col2, col3, col4, col5 = st.columns(5)
