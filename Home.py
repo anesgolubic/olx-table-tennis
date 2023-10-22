@@ -49,9 +49,11 @@ tipovi_matcheva = matches['Tip_meča'].unique()
 
 col1, col2 = st.columns(2)
 with col1:
-    st.write('Izaberi igrača:')
     igrac = st.selectbox(label='Igrač', options=igraci)
 
 with col2:
-    st.write('Izaberi tip meča:')
     tipovi = st.selectbox(label='Tip meča', options=tipovi_matcheva)
+
+matches2 = matches.query('Protivnik_1 == "'+str(igrac)+'" | Protivnik_2 == "'+str(igrac)+'"')
+matches2 = matches2.query('Tip_meča == "'+str(tipovi)+'"')
+st.write(matches2)
