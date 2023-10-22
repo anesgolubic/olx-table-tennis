@@ -61,7 +61,7 @@ with col6:
     st.write('Omjer osvojenih setova')
 
 for index, row in igraci.iterrows():
-    col1, col2, col3, col4, col5 = st.columns([1,1,1,1,3])
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
     with col1:
         st.write(row['Rang'])
     with col2:
@@ -72,7 +72,7 @@ for index, row in igraci.iterrows():
         st.write(str(row['Broj pobjeda']))
     with col5:
         st.write(str(row['Broj poraza']))
-    with col5:
+    with col6:
         st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj Izgubljenih setova']))
 
 
