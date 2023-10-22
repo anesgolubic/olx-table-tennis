@@ -24,3 +24,18 @@ last_matches = matches[0:10]
 
 st.write('Posljednji rezultati')
 st.write(last_matches)
+
+#def rezultat_matcha(id):
+
+
+
+for index,row in last_matches.iterrows():
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write(row['Datum_meča'])
+    with col2:
+        st.write(row['Protivnik_1'])
+        st.write(row['Protivnik_2'])
+    with col3:
+        st.write(row['Rezultat_1'])
+        st.write(row['Rezultat_2'])
