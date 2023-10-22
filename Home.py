@@ -46,10 +46,35 @@ igraci = igraci.sort_values(by=['Rang'], ascending=True)
 st.header('Tabela igrača')
 st.write(igraci)
 
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+with col1:
+    st.write('Rang')
+with col2:
+    st.write('Igrač')
+with col3:
+    st.write('Broj utakmica')
+with col4:
+    st.write('Broj pobjeda')
+with col5:
+    st.write('Broj poraza')
+with col6:
+    st.write('Omjer osvojenih setova')
+
 for index, row in igraci.iterrows():
     col1, col2, col3, col4, col5 = st.columns([1,1,1,1,3])
     with col1:
         st.write(row['Rang'])
+    with col2:
+        st.write(str(row['Ime'])+' '+str(row['Prezime'] ))
+    with col3:
+        st.write(str(row['Broj utakmica']))
+    with col4:
+        st.write(str(row['Broj pobjeda']))
+    with col5:
+        st.write(str(row['Broj poraza']))
+    with col5:
+        st.write(str(row['Broj osvojenih setova'])+':'+str(row['Broj izgubljenih setova']))
+
 
 st.header('Statistike igrača')
 igrac = st.selectbox(label='Igrač', options=igraci)
