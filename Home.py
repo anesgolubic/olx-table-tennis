@@ -80,13 +80,13 @@ for index, row in igraci.iterrows():
         st.write(str(row['Razlika']))
     with col8:
         rezz = matches.query('Protivnik_1 == "'+str(row['Ime'])+'" | Protivnik_2 == "'+str(row['Ime'])+'"')
-        imee = row['Ime']
+        imee = str(row['Ime'])
         st.write(rezz)
         if len(rezz) == 0:
             pass
         else:
             for index, row in rezz.iterrows():
-                if rezz['Pobjednik'] == imee:
+                if str(rezz['Pobjednik']) == imee:
                     st.write('W')
                 else:
                     st.write('L')
