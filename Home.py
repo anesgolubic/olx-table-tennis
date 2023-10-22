@@ -56,4 +56,15 @@ with col2:
 
 matches2 = matches.query('Protivnik_1 == "'+str(igrac)+'" | Protivnik_2 == "'+str(igrac)+'"')
 matches2 = matches2.query('Tip_meča == "'+str(tipovi)+'"')
-st.write(matches2)
+pobjede = len(matches2.query('Pobjednik == "'+str(igrac)+'"'))
+porazi = len(matches2.query('Gubitnik == "'+str(igrac)+'"'))
+
+broj_utakmica = len(matches2)
+st.header('Igrač: '+str(igrac))
+col1, col2, col3, col4, col5 = st.columns(5)
+with col1:
+    st.metric(label="Broj utakmica", value=str(broj_utakmica))
+with col2:
+    st.metric(label="Broj pobjeda", value=str(pobjede))
+with col3:
+    st.metric(label="Broj poraza", value=str(porazi))
