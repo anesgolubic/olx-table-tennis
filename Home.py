@@ -44,7 +44,7 @@ igraci = igraci.sort_values(by=['Rang'], ascending=True)
 
 
 st.header('Tabela igrača')
-st.write(igraci)
+#st.write(igraci)
 
 col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
 with col1:
@@ -95,5 +95,5 @@ for index, row in igraci.iterrows():
                     lista += '<span style="color: #dc0000">L</span>'
         st.markdown(lista, unsafe_allow_html=True)
 
-st.header('Statistike igrača')
-igrac = st.selectbox(label='Igrač', options=igraci)
+#st.header('Statistike igrača')
+#igrac = st.selectbox(label='Igrač', options=igraci)
