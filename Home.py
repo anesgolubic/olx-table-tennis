@@ -46,7 +46,10 @@ igraci = igraci.sort_values(by=['Rang'], ascending=True)
 st.header('Tabela igrača')
 st.write(igraci)
 
-
+for index, row in igraci.iterrows():
+    col1, col2, col3, col4, col5 = st.columns([1,1,1,1,3])
+    with col1:
+        st.write(row['Rang'])
 
 st.header('Statistike igrača')
 igrac = st.selectbox(label='Igrač', options=igraci)
